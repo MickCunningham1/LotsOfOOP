@@ -1,0 +1,64 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class Staff extends Person {
+	/**
+	 * ALWAYS JAVADOC!!!!!!!!!!!!!!!!
+	 * 
+	 */
+	private int staffID;
+	
+	//add in a default constructor
+	/**
+	 * default constructor
+	 */
+	public Staff(){
+		
+	}
+
+	/**
+	 * Constructor with args
+	 * @param firstName
+	 * @param lastName
+	 * @param studentID
+	 */
+	public Staff(String firstName, String lastName, int staffID) {
+		super(firstName,lastName);
+		//this super will call the constructor of the super class
+		//if we look back at the peson class, we did set first and lst name. 
+		this.setStaffID(staffID);
+	}
+	
+	/**
+	 * Get the staffID
+	 * @return the staffID
+	 */
+	public int getStaffID() {
+		return staffID;
+	}
+
+/**
+	 * Set the staffID
+	 * @param staffID the staffID to set
+	 */
+	public void setStaffID(int staffID) {
+		this.staffID = staffID;
+	}
+	
+	
+	
+	//need a display all to override Person's display all
+	/**
+	 * 
+	 */
+	@Override
+	public void displayAll(){
+		
+	super.displayAll();
+	//This above will call the super class (Person), and call the display all first name and last name
+	System.out.println("Staff ID \t\t: "+this.staffID);
+	}
+}
