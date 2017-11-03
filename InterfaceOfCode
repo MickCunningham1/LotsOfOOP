@@ -1,0 +1,16 @@
+package p1p3MickyC;
+
+/**
+ * Interface used to calculate monthly wages
+ * @author Mick
+ *
+ */
+public interface iPayable {
+	
+	/**
+	 * Used to calculate monthly wages
+	 * @return
+	 */
+	public double calculateMonthlyWage();
+
+}
