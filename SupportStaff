@@ -1,0 +1,76 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class SupportStaff extends Staff implements iPayable {
+
+	/**
+	 * 
+	 */
+	private double contractHours;
+	
+	/**
+	 * 
+	 */
+	public final static double supportStaffFixedRate = 10.50;
+	
+	/**
+	 * constructor without args
+	 */
+	public SupportStaff() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	/**
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param staffID
+	 * @param contractHours
+	 */
+	public SupportStaff(String firstName, String lastName, int staffID, double contractHours){
+		super(firstName, lastName, staffID);
+		//Checking business before setting
+		this.setContractHours(contractHours);
+	}
+  
+	/**
+	 * @return the contractHours
+	 */
+	public double getContractHours() {
+		return contractHours;
+	}
+
+	/**
+	 * @param contractHours the contractHours to set
+	 */
+	public void setContractHours(double contractHours) {
+		this.contractHours = contractHours;
+		if ((contractHours >= 1) && (contractHours <= 160)) {
+			this.contractHours = contractHours;
+		} else {
+			System.out.println("Error in setting contract hours");
+			this.contractHours = 0;
+		}
+	}
+		
+	/**
+	 * Calulates the monthly wage
+	 */
+	@Override
+	public double calculateMonthlyWage() {
+		return this.contractHours * supportStaffFixedRate;
+	}
+	
+	/**
+	 * Show all the details of the support staff member
+	 */
+	@Override
+	public void displayAll(){
+		super.displayAll();
+		System.out.println("Contract hours\t\t: "+this.contractHours);
+	}
+
+}
