@@ -1,0 +1,54 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class PostGrad extends Student {
+	
+	private String degree;
+	
+	/**
+	 * Constructor
+	 */
+	public PostGrad(){
+		
+	}
+	
+	/**
+	 * Constructor with args
+	 * @param firstName
+	 * @param lastName
+	 * @param studentID
+	 * @param degree
+	 */
+	public PostGrad(String firstName, String lastName, int studentID, String degree){
+		super(firstName,lastName,studentID);
+		this.degree = degree;
+	}
+	
+	
+	
+	
+	/**
+	 * @return the degree
+	 */
+	public String getDegree() {
+		return degree;
+	}
+
+	/**
+	 * @param degree the degree to set
+	 */
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	
+	
+	@Override
+	public void displayAll(){
+		super.displayAll();
+		System.out.println("Degree\t\t\t: "+this.degree);
+	}
+
+}
