@@ -1,0 +1,50 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class UnderGrad extends Student {
+	
+	private String course;
+	
+	/**
+	 * Constructor
+	 */
+	public UnderGrad(){
+		
+	}
+
+	/**
+	 * Constructor with args
+	 * @param firstName
+	 * @param lastName
+	 * @param studentID
+	 * @param course
+	 */
+	public UnderGrad(String firstName, String lastName, int studentID, String course ){
+		super(firstName, lastName, studentID);
+		this.course = course;
+	}
+	
+	/**
+	 * @return the course
+	 */
+	public String getCourse() {
+		return course;
+	}
+
+	/**
+	 * @param course the course to set
+	 */
+	public void setCourse(String course) {
+		this.course = course;
+	} 
+
+	@Override
+	public void displayAll(){
+		super.displayAll();
+		System.out.println("Course\t\t\t: "+this.course);
+	}
+	
+}
