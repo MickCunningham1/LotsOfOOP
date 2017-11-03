@@ -1,0 +1,84 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public abstract class Person {
+	//put in a constructor. Even though its an abstract class it does no harm
+	//default constructor
+	/**
+	 * default constructor
+	 */
+	public Person(){
+		
+	}
+	
+	//Non default constructor;
+	/**
+	 * args based constructor
+	 * @param firstName
+	 * @param lastName
+	 */
+	public Person(String firstName, String lastName ) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+	}
+	
+	
+	
+	//comment on everything!!!!
+	/**
+	 * The persons first name
+	 */
+	private String firstName;
+	
+	/**
+	 * The persons last name
+	 */
+	private String lastName;
+
+	/**
+	 * Gets the first name
+	 * @return the firstname
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	/**
+	 * Sets the last name
+	 * @param firstname
+	 */
+	public void setFirstname(String firstname) {
+		this.firstName = firstname;
+	}
+
+	/**
+	 * Gets the last name
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * Sets the last name
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	/**
+	 * Displays all info for the person
+	 */
+	public void displayAll(){
+		System.out.println("First name \t\t: "+this.firstName);
+		System.out.println("Last name \t\t: "+this.lastName);
+		
+	}
+	
+	
+}
