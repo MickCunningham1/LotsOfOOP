@@ -1,0 +1,113 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class Lecturer extends Staff implements iPayable {
+
+	// always comment your code..
+	/**
+	 * Comment everything
+	 */
+	private String school;
+
+	/**
+	 * 
+	 */
+	private int grade;
+
+	public Lecturer() {
+
+	}
+
+	public Lecturer(String firstName, String lastName, int staffID, String school, int grade) {
+		super(firstName, lastName, staffID);
+		// set up school and grade
+		this.school = school;
+		// this.grade = grade; <-- this CANT be right, as the grades run from 1
+		// to 3 and the default is 1
+		this.setGrade(grade);
+		// this previous line is a constructor with validation
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see p1p3MickyC.iPayable#calculateMonthlyWage()
+	 */
+	/**
+	 * COMMENT!!!!!!!
+	 */
+	@Override
+	public double calculateMonthlyWage() {
+		double salary;
+		salary = 0;
+		switch (this.grade) {
+		case 1:
+			salary = 2000;
+			break;
+		case 2:
+			salary = 2500;
+			break;
+		case 3:
+			salary = 3000;
+			break;
+		default:
+			System.out.println("Problem getting grade");
+			salary = 2000;
+		}
+		return salary;
+	}
+
+	/**
+	 * @return the school
+	 */
+	public String getSchool() {
+		return school;
+	}
+
+	/**
+	 * @param school
+	 *            the school to set
+	 */
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	/**
+	 * get the grade
+	 * 
+	 * @return the grade
+	 */
+	public int getGrade() {
+		return grade;
+	}
+
+	/**
+	 * set the grade
+	 * 
+	 * @param grade
+	 *            the grade to set
+	 */
+	public void setGrade(int grade) {
+
+		if (grade >= 1 && grade <= 3) {
+			this.grade = grade;
+		} else {
+			System.out.println("Error in setting grade");
+			this.grade = 1;
+		}
+
+	}
+	/**
+	 * (non-Javadoc)
+	 * @see p1p3MickyC.Staff#displayAll()
+	 */
+	@Override
+	public void displayAll() {
+		super.displayAll();
+		System.out.println("Grade \t\t\t : "+this.grade);
+	}
+
+}
