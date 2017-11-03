@@ -1,0 +1,38 @@
+package p1p3MickyC;
+
+/**
+ * @author Mick
+ *
+ */
+public class Admin {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Test case 1 - creating an undergrad
+		System.out.println("Testing UnderGrad");
+		UnderGrad u1 = new UnderGrad("Annie", "UnderGrad", 900, "Software Engineering");
+		u1.displayAll();
+
+		// Test case 2 - creating a PostGrad
+		System.out.println("\nTesting a PostGrad");
+		PostGrad p1 = new PostGrad("Andy", "Masters", 901, "BSc Chemistry");
+		p1.displayAll();
+
+		// Test case 3 - Create a lecturer
+		System.out.println("\nTesting lecturer");
+		Lecturer l1 = new Lecturer("Bill", "Gates", 111, "Computer Science", 2);
+		l1.displayAll();
+		System.out.printf("Lecturer Wages \t : £ %.2f \n", l1.calculateMonthlyWage());
+
+		// Test case 4 - creating Support Staff
+		System.out.println("\nTesting Support Staff");
+		SupportStaff sup1 = new SupportStaff("Steve", "Jobs", 112, 40.0);
+		sup1.displayAll();
+		System.out.printf("Support Staff Wages \t : £ %.2f \n", sup1.calculateMonthlyWage());
+
+	}
+
+}
